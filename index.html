@@ -554,26 +554,9 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
   </div>
 </section>
 
-<!-- 14 安全 -->
-<section class="slide" data-section="B · 領取點數" data-slide="14">
-  <div class="slide-inner">
-    <p class="kicker">KEEP IT SAFE</p>
-    <h2>三條規則，<span class="bad">不要踩</span></h2>
-    <div class="grid3" style="margin-top:var(--s3)">
-      <div class="card danger"><span class="num" style="color:var(--bad)">1</span><h3>不貼出去</h3><p>Token、設定 ZIP、班級密碼，<strong>不貼群組、不給別人</strong>；截圖要遮住 Token。</p></div>
-      <div class="card danger"><span class="num" style="color:var(--bad)">2</span><h3>不交換</h3><p>每人用<strong>自己的</strong>設定。借用或交換會讓用量算錯人，也查不出誰做了什麼。</p></div>
-      <div class="card accent2"><span class="num">3</span><h3>出問題先記下來</h3><p>記下<strong>時間、做了什麼、錯誤文字</strong>，告訴老師；<strong>不要附上 Token</strong>。</p></div>
-    </div>
-  </div>
-  <div class="notes">
-    <p>這三條出自平台操作手冊：分享者可以查看學員狀態與用量，但不應要求學員把完整 Token 或含 Token 的設定 ZIP 貼到班級群組。</p>
-    <p>排錯順序：先看領取連結是否本次課程、再看有效時間與時段、再看個人與整池剩餘量、最後看模型。一次只調整一項。</p>
-    <p>學生「看起來像有點數但不能用」，最常見的是舊任務還在用舊設定，或不在開放時段。</p>
-  </div>
-</section>
 
 <!-- 15 專案流程 -->
-<section class="slide" data-section="C · 專案起始" data-slide="15">
+<section class="slide" data-section="C · 專案起始" data-slide="14">
   <div class="slide-inner">
     <p class="kicker">PROJECT LOOP</p>
     <h2>每個專案，只要記住<span class="hl">三句話</span></h2>
@@ -593,7 +576,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 16 初始化做什麼 -->
-<section class="slide" data-section="C · 專案起始" data-slide="16">
+<section class="slide" data-section="C · 專案起始" data-slide="15">
   <div class="slide-inner">
     <p class="kicker">INIT · 初始化專案</p>
     <h2>「初始化專案」會做兩件事</h2>
@@ -625,35 +608,9 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
   </div>
 </section>
 
-<!-- 17 作業成果規則 -->
-<section class="slide" data-section="C · 專案起始" data-slide="17">
-  <div class="slide-inner">
-    <p class="kicker">OUTPUT RULE</p>
-    <h2>生成的檔案，<span class="hl2">一律放進「作業成果」</span></h2>
-    <div class="grid2" style="margin-top:var(--s3)">
-      <div class="card"><pre class="tree"><span class="b">作業成果\</span>
-├─ <span class="y">圖片\</span>
-│   └─ 20261007_戴眼鏡的貓.png
-├─ <span class="y">影片\</span>
-│   └─ 20261007_貓翻書.mp4
-└─ <span class="y">文件\</span>
-    └─ 學習歷程報告.docx</pre></div>
-      <div>
-        <p style="margin-bottom:var(--s4)"><span class="hl2">①</span> 圖片、影片、文件<strong>各放各的資料夾</strong>。</p>
-        <p style="margin-bottom:var(--s4)"><span class="hl2">②</span> 檔名用<strong>「日期＿主題」</strong>，不覆蓋舊檔。</p>
-        <p style="margin-bottom:0"><span class="hl2">③</span> 每次生成後，<strong>叫 AI 告訴你</strong>存在哪、叫什麼名字。</p>
-      </div>
-    </div>
-  </div>
-  <div class="notes">
-    <p>這條規則已經寫進專案藍圖（AGENTS.md），AI 每次開工都會讀到；但還是要在指令裡提醒一次，成功率更高。</p>
-    <p>Codex 內建生圖有時會先存在別的位置，若沒放到作業成果，請它「複製（或移到）作業成果\圖片」。收工時 AI 也會提醒哪些檔案不在作業成果裡（只提醒，不自己搬）。</p>
-    <p>作業成果＝之後學習歷程報告的原料，沒放進來的作品，報告就寫不到。</p>
-  </div>
-</section>
 
 <!-- 18 圖片提示語 -->
-<section class="slide" data-section="D · 動手生成" data-slide="18">
+<section class="slide" data-section="D · 動手生成" data-slide="16">
   <div class="slide-inner">
     <p class="kicker">PROMPTS · 圖片</p>
     <h2>範例提示語：照著改成你的題目</h2>
@@ -678,7 +635,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 19 影片提示語 -->
-<section class="slide" data-section="D · 動手生成" data-slide="19">
+<section class="slide" data-section="D · 動手生成" data-slide="17">
   <div class="slide-inner">
     <p class="kicker">PROMPTS · 影片</p>
     <h2>影片：<span class="hl">先有一張圖</span>，再讓它動起來</h2>
@@ -698,7 +655,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 20 學習歷程報告 -->
-<section class="slide" data-section="E · 做完之後" data-slide="20">
+<section class="slide" data-section="E · 做完之後" data-slide="18">
   <div class="slide-inner">
     <p class="kicker">REPORT · 學習歷程報告</p>
     <h2>作品，變成<span class="hl">學習歷程報告</span></h2>
@@ -712,7 +669,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
     <div class="card accent2" style="margin-top:var(--s3)"><p style="margin:0">對 AI 說「<strong>寫學習歷程報告</strong>」。AI 只寫<strong>真的發生過的事</strong>；你沒同意的省思，<strong>不會寫進去</strong>。交出去之前，自己從頭看一遍。</p></div>
   </div>
   <div class="notes">
-    <p>學習歷程中的「課程學習成果」每項有百字簡述；本報告第一段即成果簡述，後面依序是學習動機、學習歷程、成果展示、學習省思。學校若有指定範本或字數，以學校為準。【待老師提供】</p>
+    <p>學習歷程中的「課程學習成果」每項有百字簡述；本報告依序是課程名稱、成果簡述、學習歷程、成果展示、學習省思。學校若有指定範本或字數，以學校為準。【待老師提供】</p>
     <p>對話紀錄會自動遮蔽金鑰與密碼；報告最後附「AI 使用說明」，誠實揭露圖片是 AI 生成、文字經學生同意。</p>
     <p>省思的流程：AI 問三個小問題 → 學生回答一兩句 → AI 代寫 150–300 字 → 問「同意嗎？」→ 學生同意才寫入。學生也可以選擇直接用自己的原句。</p>
     <p>【待實測】Codex 對話紀錄的存放位置（~/.codex/sessions）。讀不到時，學生可以貼上重要指令與結果。</p>
@@ -720,7 +677,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 21 帶走 -->
-<section class="slide" data-section="帶走" data-slide="21">
+<section class="slide" data-section="帶走" data-slide="19">
   <div class="slide-inner">
     <p class="kicker">TAKE AWAY</p>
     <h2>今天帶走這幾件事</h2>
