@@ -145,6 +145,11 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
   font-family:"JetBrains Mono","Noto Sans TC",monospace;color:var(--accent);letter-spacing:.14em;font-size:15px}
 .notes p,.notes li{font-size:18px;margin:0 0 8px}
 
+.links{display:flex;gap:var(--s3);justify-content:center;flex-wrap:wrap;margin-top:var(--s2)}
+.btn{display:inline-block;padding:14px 28px;border-radius:12px;font-size:var(--t3);font-weight:700;text-decoration:none;
+  color:var(--bg);background:var(--accent);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--accent-2)}
+.lnk{color:var(--accent);font-weight:700}
 .credit{font-size:15px;color:var(--ink-4);line-height:1.7}
 .credit a{color:var(--accent)}
 
@@ -175,6 +180,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
     <h1 style="font-size:96px">Agent 入門</h1>
     <p class="lead" style="margin-bottom:var(--s2)">從「會聊天」到「會做事」</p>
     <p class="small">領點數 · 建專案 · 生出你的第一件 AI 作品</p>
+    <div class="links"><a class="btn" href="https://ai.nmking.io/ixeub" target="_blank" rel="noopener">① 領取點數池 →</a><a class="btn" href="https://github.com/frentexx/ppsh-student-agent-starter" target="_blank" rel="noopener">② 學生技能包（GitHub）→</a></div>
   </div>
   <div class="notes">
     <p>開場先問一句：「你用過 ChatGPT 之類的 AI 嗎？它做過什麼讓你覺得『它只是在講，沒有真的幫我做』？」收兩三個回答，再往下。</p>
@@ -188,9 +194,9 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
     <p class="kicker">TODAY</p>
     <h2>今天你會做到三件事</h2>
     <div class="grid3" style="margin-top:var(--s2)">
-      <div class="card accent"><span class="num">01</span><h3>看懂 Agent</h3><p>它和一般聊天 AI 差在哪、由哪幾個部分組成</p></div>
-      <div class="card accent2"><span class="num">02</span><h3>領點數、建專案</h3><p>用班級密碼領課程點數，建好自己的專案資料夾</p></div>
-      <div class="card accent"><span class="num">03</span><h3>做出第一件作品</h3><p>用 Codex 生圖，並放進專案的「作業成果」</p></div>
+      <div class="card accent2"><span class="num">01</span><h3>領到點數</h3><p>用班級密碼領課程點數，接上 Codex</p></div>
+      <div class="card accent"><span class="num">02</span><h3>看懂 Agent</h3><p>它和一般聊天 AI 差在哪、由哪幾個部分組成</p></div>
+      <div class="card accent"><span class="num">03</span><h3>建專案、做作品</h3><p>建好專案資料夾，用 Codex 生圖並放進「作業成果」</p></div>
     </div>
   </div>
   <div class="notes">
@@ -199,8 +205,112 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
   </div>
 </section>
 
+<!-- 10 點數池 -->
+<section class="slide" data-section="A · 領取點數" data-slide="3">
+  <div class="slide-inner">
+    <p class="kicker">TOKEN POOL</p>
+    <h2>上課的 AI 額度，來自老師開的<span class="hl2">點數池</span></h2>
+    <div class="grid3" style="margin-top:var(--s3)">
+      <div class="card accent2"><span class="num">POOL</span><h3>池預算</h3><p>這堂課的總額度，<strong>全班共用</strong>，用完就沒了</p></div>
+      <div class="card accent"><span class="num">PER PERSON</span><h3>每人額度</h3><p>你個人最多能用多少，<strong>不會增加</strong>全班的總額度</p></div>
+      <div class="card accent"><span class="num">TIME</span><h3>有效時間</h3><p>只在課程日期與<strong>開放的時段</strong>內能用</p></div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)">三個限制<span class="hl2">任何一個用完或不符</span>，你就不能用——所以不要亂送大量內容、不要一直重生。</p>
+  </div>
+  <div class="notes">
+    <p>這是平台（NMKING AI Gateway）的分享者視角概念：老師建立「點數池」，設定總預算、每人上限與開放時間，學生領取後在池內共同消耗。</p>
+    <p>個人額度是「軟上限」：已開始的請求可以做完，所以實際用量可能略超過；增加個人上限不會增加整個池的預算。</p>
+    <p>沒有教學生如何建池，那是老師的事，這裡只讓學生知道為什麼有時候會「突然不能用」。</p>
+  </div>
+</section>
+
+<!-- 11 領取 -->
+<section class="slide" data-section="A · 領取點數" data-slide="4">
+  <div class="slide-inner">
+    <p class="kicker">CLAIM · 免登入領取</p>
+    <h2>用<span class="hl2">班級密碼</span>領取你的 Token</h2>
+    <div class="grid2" style="margin-top:var(--s3);align-items:start">
+      <div class="flow" style="flex-direction:column;gap:10px">
+        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">1</span><b style="margin:0">開老師給的<span class="hl">領取連結</span></b></div>
+        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">2</span><b style="margin:0">確認是<span class="hl">這堂課</span>的名稱</b></div>
+        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">3</span><b style="margin:0">識別名稱填<span class="hl">座號</span>（不要姓名）</b></div>
+        <div class="st hot" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">4</span><b style="margin:0">輸入<span class="hl2">班級密碼</span></b></div>
+        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">5</span><b style="margin:0">核對點數池、模型、有效時間，<span class="hl">下載自己的 ZIP</span></b></div>
+      </div>
+      <div>
+        <div style="margin-bottom:var(--s4)"><a class="btn" href="https://ai.nmking.io/ixeub" target="_blank" rel="noopener">開啟領取連結 →</a></div>
+        <div class="card accent2" style="margin-bottom:var(--s4)"><h3>班級密碼</h3><p>老師<strong>口頭或寫在黑板</strong>告訴你，自己在網頁輸入。<strong>不要貼在群組。</strong></p></div>
+        <div class="card danger"><h3>不要換瀏覽器</h3><p>免登入領取<strong>沒有復原碼</strong>。換電腦或清除瀏覽器資料後，不一定打得開同一份設定。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>課前由老師在平台設定免登入領取、約定識別名稱格式（例如座號）、設定班級密碼。班級密碼不寫在這份簡報、也不放進 GitHub。</p>
+    <p>第 5 步一定要讓學生看一眼「池名稱／模型／有效時間」是不是這堂課的，對不上就舉手。</p>
+    <p>下載的 ZIP 是學生自己的，裡面含連線設定（等同密碼），不要傳給別人、不要貼到班級群組。</p>
+    <p>平台畫面會更新，以學生當下看到的為準；真人帶做時邊投影邊走一遍。</p>
+  </div>
+</section>
+
+<!-- 12 套用設定 -->
+<section class="slide" data-section="A · 領取點數" data-slide="5">
+  <div class="slide-inner">
+    <p class="kicker">APPLY · 套用設定</p>
+    <h2>讓 Codex 接上專案點數池</h2>
+    <div class="flow" style="margin-top:var(--s3)">
+      <div class="st"><span class="n">1</span><b>存好工作</b><span>作業都在原位</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">2</span><b>解壓縮 ZIP</b><span>右鍵 → 全部解壓縮</span></div><div class="ar">→</div>
+      <div class="st hot"><span class="n">3</span><b>雙擊套用檔</b><span><code>1-套用-NMKING-Codex.bat</code></span></div><div class="ar">→</div>
+      <div class="st"><span class="n">4</span><b>完全關閉 Codex</b><span>連背景程式也關</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">5</span><b>重開，建立「新任務」</b><span>只重開視窗不夠</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">6</span><b>核對</b><span>提供者、點數池、模型</span></div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)">看到 Windows 警告、或套用檔跑不起來：<span class="hl2">先舉手問老師</span>，不要自己繞過，也不要用別人的 ZIP。</p>
+  </div>
+  <div class="notes">
+    <p>套用工具會「改動個人的 Codex 連線設定」，不會搬移專案。所以第 1 步一定先存好工作。</p>
+    <p>舊任務可能還記著先前的提供者設定；一定要「建立新任務」，再核對提供者、點數池、模型。</p>
+    <p>【待實測】Codex 畫面上確認提供者與點數池的實際位置，請先在教室電腦走一遍再補充到這頁。</p>
+    <p>新任務開起來之後，對 AI 說「開工」就能接回進度（下面會講）。</p>
+  </div>
+</section>
+
+<!-- 13 切換個人／專案 -->
+<section class="slide" data-section="A · 領取點數" data-slide="6">
+  <div class="slide-inner">
+    <p class="kicker">SWITCH · 切換</p>
+    <h2>個人設定 ⇄ 專案點數池，<span class="hl2">來回切換</span></h2>
+    <svg viewBox="0 0 1200 330" role="img" aria-label="個人設定與專案點數池之間用套用與復原來回切換">
+      <defs>
+        <marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E0A458"/></marker>
+        <marker id="s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7CB7E8"/></marker>
+      </defs>
+      <rect class="box" x="10" y="40" width="330" height="170" rx="18"/>
+      <text class="t-ink" x="175" y="98" text-anchor="middle" font-size="30" font-weight="700">個人設定</text>
+      <text x="175" y="136" text-anchor="middle" font-size="20">自己的帳號與額度</text>
+      <text class="t-dim" x="175" y="170" text-anchor="middle" font-size="18">課外、自學用</text>
+      <rect class="box-b" x="860" y="40" width="330" height="170" rx="18"/>
+      <text class="t-acc2" x="1025" y="98" text-anchor="middle" font-size="30" font-weight="700">專案點數池</text>
+      <text x="1025" y="136" text-anchor="middle" font-size="20">老師開的，全班共用</text>
+      <text class="t-dim" x="1025" y="170" text-anchor="middle" font-size="18">上課、做作業用</text>
+      <path class="ln-b" d="M345 90 H855" marker-end="url(#s1)"/>
+      <text class="t-acc2" x="600" y="76" text-anchor="middle" font-size="22" font-weight="700">上課：套用 1-套用-NMKING-Codex.bat</text>
+      <path class="ln-a" d="M855 165 H345" marker-end="url(#s2)"/>
+      <text class="t-acc" x="600" y="204" text-anchor="middle" font-size="22" font-weight="700">下課：執行 2-復原</text>
+      <text class="t-dim" x="600" y="250" text-anchor="middle" font-size="19">每次切換：先存檔 → 完全關閉 Codex → 重開並建立新任務 → 再核對一次</text>
+      <text class="t-ink" x="600" y="300" text-anchor="middle" font-size="21">換到<tspan class="t-acc2" font-weight="700">另一堂課的池</tspan>：到那個池的領取頁下載<tspan class="t-acc2" font-weight="700">新的 ZIP</tspan>，不要重複套用舊的</text>
+    </svg>
+  </div>
+  <div class="notes">
+    <p>「個人」是學生自己的 Codex 帳號／額度；「專案」是老師開的點數池。上課只用專案池，下課前才切回個人，避免用掉個人額度或把課外內容算進課程用量。</p>
+    <p>還沒下課前不要切回個人設定。</p>
+    <p>每個人保有自己的工作區與專案，不需要交換帳號或 Token。切換不會搬動專案資料夾。</p>
+    <p>【待實測】復原檔在 Windows 上的實際檔名，以 ZIP 內為準（開頭是「2-」）。</p>
+  </div>
+</section>
+
 <!-- 03 Chat AI vs Agent -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="3">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="7">
   <div class="slide-inner">
     <p class="kicker">CHAT AI VS AGENT</p>
     <h2>Chat AI 回答你，<span class="hl">Agent 幫你做完</span></h2>
@@ -243,7 +353,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 04 工讀生比喻 + 五個部分 -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="4">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="8">
   <div class="slide-inner">
     <p class="kicker">THE PARTS</p>
     <h2>Agent＝一位聰明、但<span class="hl2">每天上班都失憶</span>的工讀生</h2>
@@ -301,7 +411,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 05 LLM vs Harness -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="5">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="9">
   <div class="slide-inner">
     <p class="kicker">LLM VS HARNESS</p>
     <h2>大腦負責想，管家負責做</h2>
@@ -335,7 +445,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 06 Context -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="6">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="10">
   <div class="slide-inner">
     <p class="kicker">CONTEXT</p>
     <h2>桌面會被塞滿：<span class="hl2">每問一句，整桌重送一次</span></h2>
@@ -377,7 +487,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 07 專案資料夾 -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="7">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="11">
   <div class="slide-inner">
     <p class="kicker">PROJECT FOLDER</p>
     <h2>專案資料夾：Agent 的<span class="hl">工作間</span></h2>
@@ -406,7 +516,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 08 技能 -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="8">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="12">
   <div class="slide-inner">
     <p class="kicker">SKILLS</p>
     <h2>技能＝給 AI 看的 <span class="hl">SOP 說明書</span></h2>
@@ -415,7 +525,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
       <div class="st"><span class="n">2</span><b>說明書放上桌</b><span>載入 Context</span></div><div class="ar">→</div>
       <div class="st"><span class="n">3</span><b>AI 照步驟做</b><span>該停就停</span></div>
     </div>
-    <p class="small" style="margin-bottom:var(--s3)">純文字、不是程式、沒說到關鍵字就不會自己出現。我們用這五個：</p>
+    <p class="small" style="margin-bottom:var(--s3)"><a class="lnk" href="https://github.com/frentexx/ppsh-student-agent-starter" target="_blank" rel="noopener">技能包下載頁（GitHub）</a>　·　純文字、不是程式、沒說到關鍵字就不會自己出現。我們用這五個：</p>
     <div class="grid3" style="grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s4)">
       <div class="card accent2"><h3 style="font-size:22px">領點數</h3><p>引導領取與切換</p></div>
       <div class="card"><h3 style="font-size:22px">初始化專案</h3><p>建藍圖、成果夾</p></div>
@@ -432,7 +542,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 09 交辦四問 -->
-<section class="slide" data-section="A · 認識 AGENT" data-slide="9">
+<section class="slide" data-section="B · 認識 AGENT" data-slide="13">
   <div class="slide-inner">
     <p class="kicker">HOW TO ASK</p>
     <h2>交辦事情，說清楚<span class="hl">四件事</span></h2>
@@ -447,113 +557,9 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
   <div class="notes">
     <p>新手交辦失敗，多半是漏了其中一項：漏了「做什麼」會得到一坨散文；漏了「用什麼」它會自己編；漏了「不做什麼」可能一路做到底；漏了「驗什麼」你不知道錯在哪。</p>
     <p>第 4 問要寫具體：寫「存好後告訴我檔名與位置」比「檢查一下」有用。但它的回報只是線索，你還是要自己打開成品看。</p>
-    <p>下面講完領點數與專案起始，後面的「範例提示語」就是照這四件事寫出來的。</p>
+    <p>後面的「範例提示語」就是照這四件事寫出來的。</p>
   </div>
 </section>
-
-<!-- 10 點數池 -->
-<section class="slide" data-section="B · 領取點數" data-slide="10">
-  <div class="slide-inner">
-    <p class="kicker">TOKEN POOL</p>
-    <h2>上課的 AI 額度，來自老師開的<span class="hl2">點數池</span></h2>
-    <div class="grid3" style="margin-top:var(--s3)">
-      <div class="card accent2"><span class="num">POOL</span><h3>池預算</h3><p>這堂課的總額度，<strong>全班共用</strong>，用完就沒了</p></div>
-      <div class="card accent"><span class="num">PER PERSON</span><h3>每人額度</h3><p>你個人最多能用多少，<strong>不會增加</strong>全班的總額度</p></div>
-      <div class="card accent"><span class="num">TIME</span><h3>有效時間</h3><p>只在課程日期與<strong>開放的時段</strong>內能用</p></div>
-    </div>
-    <p class="small" style="margin-top:var(--s3)">三個限制<span class="hl2">任何一個用完或不符</span>，你就不能用——所以不要亂送大量內容、不要一直重生。</p>
-  </div>
-  <div class="notes">
-    <p>這是平台（NMKING AI Gateway）的分享者視角概念：老師建立「點數池」，設定總預算、每人上限與開放時間，學生領取後在池內共同消耗。</p>
-    <p>個人額度是「軟上限」：已開始的請求可以做完，所以實際用量可能略超過；增加個人上限不會增加整個池的預算。</p>
-    <p>沒有教學生如何建池，那是老師的事，這裡只讓學生知道為什麼有時候會「突然不能用」。</p>
-  </div>
-</section>
-
-<!-- 11 領取 -->
-<section class="slide" data-section="B · 領取點數" data-slide="11">
-  <div class="slide-inner">
-    <p class="kicker">CLAIM · 免登入領取</p>
-    <h2>用<span class="hl2">班級密碼</span>領取你的 Token</h2>
-    <div class="grid2" style="margin-top:var(--s3);align-items:start">
-      <div class="flow" style="flex-direction:column;gap:10px">
-        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">1</span><b style="margin:0">開老師給的<span class="hl">領取連結</span></b></div>
-        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">2</span><b style="margin:0">確認是<span class="hl">這堂課</span>的名稱</b></div>
-        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">3</span><b style="margin:0">識別名稱填<span class="hl">座號</span>（不要姓名）</b></div>
-        <div class="st hot" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">4</span><b style="margin:0">輸入<span class="hl2">班級密碼</span></b></div>
-        <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">5</span><b style="margin:0">核對點數池、模型、有效時間，<span class="hl">下載自己的 ZIP</span></b></div>
-      </div>
-      <div>
-        <div class="card accent2" style="margin-bottom:var(--s4)"><h3>班級密碼</h3><p>老師<strong>口頭或寫在黑板</strong>告訴你，自己在網頁輸入。<strong>不要貼在群組。</strong></p></div>
-        <div class="card danger"><h3>不要換瀏覽器</h3><p>免登入領取<strong>沒有復原碼</strong>。換電腦或清除瀏覽器資料後，不一定打得開同一份設定。</p></div>
-      </div>
-    </div>
-  </div>
-  <div class="notes">
-    <p>課前由老師在平台設定免登入領取、約定識別名稱格式（例如座號）、設定班級密碼。班級密碼不寫在這份簡報、也不放進 GitHub。</p>
-    <p>第 5 步一定要讓學生看一眼「池名稱／模型／有效時間」是不是這堂課的，對不上就舉手。</p>
-    <p>下載的 ZIP 是學生自己的，裡面含連線設定（等同密碼），不要傳給別人、不要貼到班級群組。</p>
-    <p>平台畫面會更新，以學生當下看到的為準；真人帶做時邊投影邊走一遍。</p>
-  </div>
-</section>
-
-<!-- 12 套用設定 -->
-<section class="slide" data-section="B · 領取點數" data-slide="12">
-  <div class="slide-inner">
-    <p class="kicker">APPLY · 套用設定</p>
-    <h2>讓 Codex 接上專案點數池</h2>
-    <div class="flow" style="margin-top:var(--s3)">
-      <div class="st"><span class="n">1</span><b>存好工作</b><span>作業都在原位</span></div><div class="ar">→</div>
-      <div class="st"><span class="n">2</span><b>解壓縮 ZIP</b><span>右鍵 → 全部解壓縮</span></div><div class="ar">→</div>
-      <div class="st hot"><span class="n">3</span><b>雙擊套用檔</b><span><code>1-套用-NMKING-Codex.bat</code></span></div><div class="ar">→</div>
-      <div class="st"><span class="n">4</span><b>完全關閉 Codex</b><span>連背景程式也關</span></div><div class="ar">→</div>
-      <div class="st cool"><span class="n">5</span><b>重開，建立「新任務」</b><span>只重開視窗不夠</span></div><div class="ar">→</div>
-      <div class="st cool"><span class="n">6</span><b>核對</b><span>提供者、點數池、模型</span></div>
-    </div>
-    <p class="small" style="margin-top:var(--s3)">看到 Windows 警告、或套用檔跑不起來：<span class="hl2">先舉手問老師</span>，不要自己繞過，也不要用別人的 ZIP。</p>
-  </div>
-  <div class="notes">
-    <p>套用工具會「改動個人的 Codex 連線設定」，不會搬移專案。所以第 1 步一定先存好工作。</p>
-    <p>舊任務可能還記著先前的提供者設定；一定要「建立新任務」，再核對提供者、點數池、模型。</p>
-    <p>【待實測】Codex 畫面上確認提供者與點數池的實際位置，請先在教室電腦走一遍再補充到這頁。</p>
-    <p>新任務開起來之後，對 AI 說「開工」就能接回進度（下面會講）。</p>
-  </div>
-</section>
-
-<!-- 13 切換個人／專案 -->
-<section class="slide" data-section="B · 領取點數" data-slide="13">
-  <div class="slide-inner">
-    <p class="kicker">SWITCH · 切換</p>
-    <h2>個人設定 ⇄ 專案點數池，<span class="hl2">來回切換</span></h2>
-    <svg viewBox="0 0 1200 330" role="img" aria-label="個人設定與專案點數池之間用套用與復原來回切換">
-      <defs>
-        <marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#E0A458"/></marker>
-        <marker id="s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7CB7E8"/></marker>
-      </defs>
-      <rect class="box" x="10" y="40" width="330" height="170" rx="18"/>
-      <text class="t-ink" x="175" y="98" text-anchor="middle" font-size="30" font-weight="700">個人設定</text>
-      <text x="175" y="136" text-anchor="middle" font-size="20">自己的帳號與額度</text>
-      <text class="t-dim" x="175" y="170" text-anchor="middle" font-size="18">課外、自學用</text>
-      <rect class="box-b" x="860" y="40" width="330" height="170" rx="18"/>
-      <text class="t-acc2" x="1025" y="98" text-anchor="middle" font-size="30" font-weight="700">專案點數池</text>
-      <text x="1025" y="136" text-anchor="middle" font-size="20">老師開的，全班共用</text>
-      <text class="t-dim" x="1025" y="170" text-anchor="middle" font-size="18">上課、做作業用</text>
-      <path class="ln-b" d="M345 90 H855" marker-end="url(#s1)"/>
-      <text class="t-acc2" x="600" y="76" text-anchor="middle" font-size="22" font-weight="700">上課：套用 1-套用-NMKING-Codex.bat</text>
-      <path class="ln-a" d="M855 165 H345" marker-end="url(#s2)"/>
-      <text class="t-acc" x="600" y="204" text-anchor="middle" font-size="22" font-weight="700">下課：執行 2-復原</text>
-      <text class="t-dim" x="600" y="250" text-anchor="middle" font-size="19">每次切換：先存檔 → 完全關閉 Codex → 重開並建立新任務 → 再核對一次</text>
-      <text class="t-ink" x="600" y="300" text-anchor="middle" font-size="21">換到<tspan class="t-acc2" font-weight="700">另一堂課的池</tspan>：到那個池的領取頁下載<tspan class="t-acc2" font-weight="700">新的 ZIP</tspan>，不要重複套用舊的</text>
-    </svg>
-  </div>
-  <div class="notes">
-    <p>「個人」是學生自己的 Codex 帳號／額度；「專案」是老師開的點數池。上課只用專案池，下課前才切回個人，避免用掉個人額度或把課外內容算進課程用量。</p>
-    <p>還沒下課前不要切回個人設定。</p>
-    <p>每個人保有自己的工作區與專案，不需要交換帳號或 Token。切換不會搬動專案資料夾。</p>
-    <p>【待實測】復原檔在 Windows 上的實際檔名，以 ZIP 內為準（開頭是「2-」）。</p>
-  </div>
-</section>
-
 
 <!-- 15 專案流程 -->
 <section class="slide" data-section="C · 專案起始" data-slide="14">
@@ -607,7 +613,6 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
     <p>Python 套件（python-docx 等）安裝前一定先問學生同意，失敗就停下請學生找老師。</p>
   </div>
 </section>
-
 
 <!-- 18 圖片提示語 -->
 <section class="slide" data-section="D · 動手生成" data-slide="16">
