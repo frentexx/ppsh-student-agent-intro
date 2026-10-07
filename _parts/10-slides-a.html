@@ -1,0 +1,283 @@
+
+<!-- 01 封面 -->
+<section class="slide" data-section="屏北高中 · AI AGENT" data-slide="1">
+  <div class="slide-inner divider">
+    <p class="kicker">PPSH · STUDENT AGENT STARTER</p>
+    <h1 style="font-size:96px">Agent 入門</h1>
+    <p class="lead" style="margin-bottom:var(--s2)">從「會聊天」到「會做事」</p>
+    <p class="small">領點數 · 建專案 · 生出你的第一件 AI 作品</p>
+  </div>
+  <div class="notes">
+    <p>開場先問一句：「你用過 ChatGPT 之類的 AI 嗎？它做過什麼讓你覺得『它只是在講，沒有真的幫我做』？」收兩三個回答，再往下。</p>
+    <p>今天的順序：先弄懂 Agent 是什麼 → 領點數 → 建好專案 → 試著生成作品。</p>
+  </div>
+</section>
+
+<!-- 02 今天目標 -->
+<section class="slide" data-section="今天要做到" data-slide="2">
+  <div class="slide-inner">
+    <p class="kicker">TODAY</p>
+    <h2>今天你會做到三件事</h2>
+    <div class="grid3" style="margin-top:var(--s2)">
+      <div class="card accent"><span class="num">01</span><h3>看懂 Agent</h3><p>它和一般聊天 AI 差在哪、由哪幾個部分組成</p></div>
+      <div class="card accent2"><span class="num">02</span><h3>領點數、建專案</h3><p>用班級密碼領課程點數，建好自己的專案資料夾</p></div>
+      <div class="card accent"><span class="num">03</span><h3>做出第一件作品</h3><p>用 Codex 生圖，並放進專案的「作業成果」</p></div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>不談 MCP，不談 ComfyUI 的細節；ComfyUI 與提示語的進階技巧由美術老師接手。</p>
+    <p>這頁讓學生知道終點：下課時，他的「作業成果」資料夾裡要有東西。</p>
+  </div>
+</section>
+
+<!-- 03 Chat AI vs Agent -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="3">
+  <div class="slide-inner">
+    <p class="kicker">CHAT AI VS AGENT</p>
+    <h2>Chat AI 回答你，<span class="hl">Agent 幫你做完</span></h2>
+    <div class="grid2s" style="margin-top:var(--s3)">
+      <div class="card">
+        <h3>Chat AI（聊天）</h3>
+        <div class="flow" style="margin:var(--s4) 0">
+          <div class="st"><b>你問</b></div><div class="ar">→</div>
+          <div class="st"><b>它回文字</b></div><div class="ar">→</div>
+          <div class="st"><b>你自己貼</b></div>
+        </div>
+        <ul>
+          <li>只輸出<strong>文字</strong>，碰不到你的檔案</li>
+          <li>你是<strong>操作者</strong>：複製、貼上、存檔</li>
+          <li>關掉視窗，就忘了</li>
+        </ul>
+      </div>
+      <div class="card accent">
+        <h3>Agent（做事）</h3>
+        <div class="flow" style="margin:var(--s4) 0">
+          <div class="st cool"><b>給目標</b></div><div class="ar">→</div>
+          <div class="st cool"><b>拆步驟</b></div><div class="ar">→</div>
+          <div class="st cool"><b>用工具</b></div><div class="ar">→</div>
+          <div class="st cool"><b>看結果</b></div>
+        </div>
+        <ul>
+          <li>能<strong>讀寫你指定的資料夾</strong>，檔案直接存好</li>
+          <li>你是<strong>驗收者</strong>：看成品對不對</li>
+          <li>有藍圖和交接檔，下次接得上</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)">比喻：<span class="hl2">問路 vs 叫車</span>——問路你自己走；叫車它自己轉彎，但你要說得出目的地。</p>
+  </div>
+  <div class="notes">
+    <p>核心一句：聊天 AI 是「講」，Agent 是「做」。兩者背後都是同一類語言模型，差別在外面接了什麼。</p>
+    <p>Agent 的中間是一個迴圈：想 → 用工具 → 看結果 → 再想，直到做完或碰到停點。</p>
+    <p>提醒：Agent 不是每次走一模一樣的步驟，同一句話這次先做 A、下次先做 B 都正常；要驗的是成品，不是過程。</p>
+  </div>
+</section>
+
+<!-- 04 工讀生比喻 + 五個部分 -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="4">
+  <div class="slide-inner">
+    <p class="kicker">THE PARTS</p>
+    <h2>Agent＝一位聰明、但<span class="hl2">每天上班都失憶</span>的工讀生</h2>
+    <svg viewBox="0 0 1200 440" role="img" aria-label="Agent 的組成圖：你的指令進入 Codex，裡面有桌面、腦袋、交接本、工具，最後動到專案資料夾">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#9BA9BD"/></marker>
+        <marker id="ahA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7CB7E8"/></marker>
+        <marker id="ahB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#E0A458"/></marker>
+      </defs>
+      <!-- 你 -->
+      <rect class="box" x="10" y="170" width="130" height="90" rx="14"/>
+      <text class="t-ink" x="75" y="208" text-anchor="middle" font-size="26" font-weight="700">你</text>
+      <text class="t-dim" x="75" y="238" text-anchor="middle" font-size="18">下指令</text>
+      <path class="ln" d="M142 215 H198" marker-end="url(#ah)"/>
+      <!-- Harness -->
+      <rect class="box-b" x="200" y="10" width="740" height="420" rx="22"/>
+      <text class="t-acc2" x="226" y="46" font-size="22" font-weight="700">Harness 管家＝Codex 這個軟體</text>
+      <!-- Context -->
+      <rect class="box-a" x="228" y="70" width="310" height="150" rx="14"/>
+      <text class="t-acc" x="248" y="104" font-size="24" font-weight="700">Context 桌面</text>
+      <text x="248" y="136" font-size="19">這次對話、你給的檔案</text>
+      <text x="248" y="164" font-size="19">＋ 技能說明書</text>
+      <text class="t-dim" x="248" y="196" font-size="17">桌子有大小，會塞滿</text>
+      <!-- LLM -->
+      <rect class="box-a" x="620" y="70" width="290" height="150" rx="14"/>
+      <text class="t-acc" x="640" y="104" font-size="24" font-weight="700">LLM 腦袋</text>
+      <text x="640" y="136" font-size="19">會讀、會想、會寫</text>
+      <text x="640" y="164" font-size="19">只輸出文字，動不了東西</text>
+      <path class="ln-a" d="M540 145 H618" marker-end="url(#ahA)"/>
+      <!-- Memory -->
+      <rect class="box-a" x="228" y="270" width="310" height="130" rx="14"/>
+      <text class="t-acc" x="248" y="304" font-size="24" font-weight="700">Memory 交接本</text>
+      <text x="248" y="336" font-size="19">AGENTS.md ／ handoff.md</text>
+      <text class="t-dim" x="248" y="366" font-size="17">跨天保留，要有人寫下來</text>
+      <path class="ln-a" d="M383 268 V222" marker-end="url(#ahA)"/>
+      <!-- Tools -->
+      <rect class="box-b" x="620" y="270" width="290" height="130" rx="14"/>
+      <text class="t-acc2" x="640" y="304" font-size="24" font-weight="700">Tools 工具</text>
+      <text x="640" y="336" font-size="19">讀檔、寫檔、生圖…</text>
+      <text class="t-dim" x="640" y="366" font-size="17">真正動手的是 Harness</text>
+      <path class="ln-b" d="M765 222 V268" marker-end="url(#ahB)"/>
+      <!-- 專案資料夾 -->
+      <rect class="box" x="990" y="170" width="200" height="90" rx="14"/>
+      <text class="t-ink" x="1090" y="204" text-anchor="middle" font-size="22" font-weight="700">專案資料夾</text>
+      <text class="t-dim" x="1090" y="234" text-anchor="middle" font-size="18">作業成果\</text>
+      <path class="ln-b" d="M912 335 H960 V215 H988" marker-end="url(#ahB)"/>
+    </svg>
+    <p class="small" style="margin-top:var(--s4)">技能不是新能力，只是<span class="hl">放在桌上的一份 SOP 說明書</span>。</p>
+  </div>
+  <div class="notes">
+    <p>用這張圖把五個詞一次對起來：LLM＝腦袋、Context＝桌面、Memory＝交接本、Tools＝手上的工具、Harness＝管家兼制度；Agent＝全部合起來。</p>
+    <p>學生最容易混的是 Context 與 Memory：Context 只在這次對話，關掉就沒；Memory（藍圖、交接檔）是寫在檔案裡，下次還在。</p>
+    <p>Codex 就是這裡的 Harness，不是 LLM。換一個模型，Codex 還是 Codex。</p>
+  </div>
+</section>
+
+<!-- 05 LLM vs Harness -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="5">
+  <div class="slide-inner">
+    <p class="kicker">LLM VS HARNESS</p>
+    <h2>大腦負責想，管家負責做</h2>
+    <div class="grid2s" style="margin-top:var(--s3)">
+      <div class="card accent">
+        <h3>LLM｜大腦</h3>
+        <ul>
+          <li>產出的只有<strong>文字</strong>，連「請執行這個指令」也只是文字</li>
+          <li>不在你的電腦上，<strong>在遠端</strong></li>
+          <li>你的點數，就是用在它的運算上</li>
+        </ul>
+      </div>
+      <div class="card accent2">
+        <h3>Harness｜管家（Codex）</h3>
+        <ul>
+          <li>真的<strong>讀檔、寫檔、跑工具、畫畫面</strong></li>
+          <li>決定它能碰哪些資料夾、哪些動作要先問你</li>
+          <li>工具失敗時，把錯誤丟回給大腦重想</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card danger" style="margin-top:var(--s3)">
+      <p style="font-size:var(--t3);color:var(--ink)"><span class="bad">注意：</span>管家在你的電腦上動手，但<strong>想事情是在外面想的</strong>。它讀到的內容會被送出去——<strong>不要讓它讀個人資料或密碼</strong>。</p>
+    </div>
+  </div>
+  <div class="notes">
+    <p>一句話：LLM 是 API 背後的算力與大腦；Harness 是讓這份能力能被安全控制、能真正動手的外殼。</p>
+    <p>常見誤會：「它在我電腦上跑，所以沒有上傳。」錯。它先在你電腦上把檔案內容讀出來，再送到模型那端。「在我電腦上跑」不等於「資料沒離開我的電腦」。</p>
+    <p>紅字報錯不用急著中斷：這是管家把錯誤丟回去讓大腦重想，正常運作。反而要小心「失敗了還說完成」，所以最後一定自己驗收。</p>
+  </div>
+</section>
+
+<!-- 06 Context -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="6">
+  <div class="slide-inner">
+    <p class="kicker">CONTEXT</p>
+    <h2>桌面會被塞滿：<span class="hl2">每問一句，整桌重送一次</span></h2>
+    <div class="grid2" style="margin-top:var(--s3)">
+      <svg viewBox="0 0 640 330" role="img" aria-label="對話越長，每一輪送出的內容越多">
+        <text class="t-dim" x="0" y="26" font-size="18">每一輪送給大腦的內容量</text>
+        <!-- 第 1 輪 -->
+        <text x="0" y="82" font-size="20">第 1 輪</text>
+        <rect x="100" y="56" width="70" height="36" rx="6" fill="#7CB7E8" opacity=".75"/>
+        <rect x="170" y="56" width="40" height="36" rx="6" fill="#E0A458" opacity=".8"/>
+        <!-- 第 5 輪 -->
+        <text x="0" y="158" font-size="20">第 5 輪</text>
+        <rect x="100" y="132" width="70" height="36" rx="6" fill="#7CB7E8" opacity=".75"/>
+        <rect x="170" y="132" width="150" height="36" rx="6" fill="#E0A458" opacity=".8"/>
+        <!-- 第 20 輪 -->
+        <text x="0" y="234" font-size="20">第 20 輪</text>
+        <rect x="100" y="208" width="70" height="36" rx="6" fill="#7CB7E8" opacity=".75"/>
+        <rect x="170" y="208" width="440" height="36" rx="6" fill="#D96A5A" opacity=".8"/>
+        <text class="t-ink" x="394" y="233" text-anchor="middle" font-size="18">快塞滿了</text>
+        <!-- 圖例 -->
+        <rect x="100" y="280" width="18" height="18" rx="4" fill="#7CB7E8" opacity=".75"/>
+        <text x="126" y="295" font-size="17">藍圖與規則</text>
+        <rect x="260" y="280" width="18" height="18" rx="4" fill="#E0A458" opacity=".8"/>
+        <text x="286" y="295" font-size="17">對話與檔案（越積越多）</text>
+      </svg>
+      <div>
+        <p style="margin-bottom:var(--s4)"><span class="hl2">越長越慢、越貴</span>：你的點數用得更快。</p>
+        <p style="margin-bottom:var(--s4)"><span class="hl2">聊久了會變笨</span>：桌面被舊內容擠滿。</p>
+        <p style="margin-bottom:0"><span class="hl">怎麼辦</span>：一次只做一件事、換題目就開新任務、重要規則寫進藍圖。</p>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Context 與 Memory 對照：Context＝桌面，只在這次對話、有上限、每輪整份重送；Memory＝交接本，跨對話保留。</p>
+    <p>「AI 忘記我剛剛說的話」多半是 Context 問題（桌面被擠爆），不是交接本丟了。</p>
+    <p>token 可理解為「字數的計價單位」，中文通常比英文更耗。這就是為什麼我們要在上課前先領「點數」，用量是共用的、有限的。</p>
+    <p>所以開新任務不只是讓它變聰明，也是為了省點數。</p>
+  </div>
+</section>
+
+<!-- 07 專案資料夾 -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="7">
+  <div class="slide-inner">
+    <p class="kicker">PROJECT FOLDER</p>
+    <h2>專案資料夾：Agent 的<span class="hl">工作間</span></h2>
+    <div class="grid2" style="margin-top:var(--s3)">
+      <div class="card"><pre class="tree"><span class="b">我的AI專案\</span>
+├─ <span class="y">AGENTS.md</span>   <span class="c">藍圖：目的與規則</span>
+├─ <span class="y">handoff.md</span>  <span class="c">交接：上次做到哪</span>
+├─ CLAUDE.md   <span class="c">一行橋接檔</span>
+└─ <span class="b">作業成果\</span>   <span class="c">所有生成的檔案</span>
+   ├─ 圖片\
+   ├─ 影片\
+   └─ 文件\</pre></div>
+      <div>
+        <h3>三個重點</h3>
+        <p style="margin-bottom:var(--s4)">① Agent 只在<span class="hl">你指定的資料夾</span>裡工作。</p>
+        <p style="margin-bottom:var(--s4)">② 藍圖和交接檔就是它的 <span class="hl">Memory</span>，不用每次重講。</p>
+        <p style="margin-bottom:0">③ 作品<span class="hl2">一律放進「作業成果」</span>，之後才找得到、交得出去。</p>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>AGENTS.md 是 Codex 等工具會自動讀的藍圖；Claude Code 讀的是 CLAUDE.md，所以放一個只寫「@AGENTS.md」的橋接檔，兩邊共用同一份。</p>
+    <p>換一台電腦、換一個新任務，只要說「開工」，AI 讀這兩份檔案就接得上。</p>
+    <p>「作業成果」是本課的硬規定：之後的學習歷程報告就是從這個資料夾整理出來的。</p>
+  </div>
+</section>
+
+<!-- 08 技能 -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="8">
+  <div class="slide-inner">
+    <p class="kicker">SKILLS</p>
+    <h2>技能＝給 AI 看的 <span class="hl">SOP 說明書</span></h2>
+    <div class="flow" style="margin:var(--s3) 0">
+      <div class="st"><span class="n">1</span><b>你說觸發詞</b><span>例如「開工」</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">2</span><b>說明書放上桌</b><span>載入 Context</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">3</span><b>AI 照步驟做</b><span>該停就停</span></div>
+    </div>
+    <p class="small" style="margin-bottom:var(--s3)">純文字、不是程式、沒說到關鍵字就不會自己出現。我們用這五個：</p>
+    <div class="grid3" style="grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s4)">
+      <div class="card accent2"><h3 style="font-size:22px">領點數</h3><p>引導領取與切換</p></div>
+      <div class="card"><h3 style="font-size:22px">初始化專案</h3><p>建藍圖、成果夾</p></div>
+      <div class="card"><h3 style="font-size:22px">開工</h3><p>接回上次進度</p></div>
+      <div class="card"><h3 style="font-size:22px">收工</h3><p>寫好交接</p></div>
+      <div class="card"><h3 style="font-size:22px">寫學習歷程報告</h3><p>整理成 Word</p></div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>技能不是新增的能力，也不是更強的模型；同一顆腦袋，只是桌上多了一份說明書。</p>
+    <p>常見誤會：「技能是程式，我不會寫」——它是純文字；「技能會一直待命」——要被觸發才載入。</p>
+    <p>這五個技能都在老師準備好的技能包裡，學校電腦已經裝好（或由 AI 協助安裝），學生只需要記得「怎麼叫它」。</p>
+  </div>
+</section>
+
+<!-- 09 交辦四問 -->
+<section class="slide" data-section="A · 認識 AGENT" data-slide="9">
+  <div class="slide-inner">
+    <p class="kicker">HOW TO ASK</p>
+    <h2>交辦事情，說清楚<span class="hl">四件事</span></h2>
+    <div class="grid4" style="margin-top:var(--s3)">
+      <div class="card accent"><span class="num">1 做什麼</span><p>要的成品長什麼樣</p><p class="small" style="margin-top:var(--s4)">「一張直式海報底圖」</p></div>
+      <div class="card accent"><span class="num">2 用什麼</span><p>拿哪些資料做</p><p class="small" style="margin-top:var(--s4)">「用我放在 作業成果\圖片 的草稿」</p></div>
+      <div class="card accent2"><span class="num">3 不做什麼</span><p>哪裡不能碰、做到哪停</p><p class="small" style="margin-top:var(--s4)">「不要出現真人臉孔；不要覆蓋舊檔」</p></div>
+      <div class="card accent2"><span class="num">4 驗什麼</span><p>你要核對哪一項</p><p class="small" style="margin-top:var(--s4)">「存好後告訴我檔名與位置」</p></div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)">口訣：<span class="hl">做什麼、用什麼、不做什麼、驗什麼</span>。漏掉其中一項，八成就要重來。</p>
+  </div>
+  <div class="notes">
+    <p>新手交辦失敗，多半是漏了其中一項：漏了「做什麼」會得到一坨散文；漏了「用什麼」它會自己編；漏了「不做什麼」可能一路做到底；漏了「驗什麼」你不知道錯在哪。</p>
+    <p>第 4 問要寫具體：寫「存好後告訴我檔名與位置」比「檢查一下」有用。但它的回報只是線索，你還是要自己打開成品看。</p>
+    <p>下面講完領點數與專案起始，後面的「範例提示語」就是照這四件事寫出來的。</p>
+  </div>
+</section>

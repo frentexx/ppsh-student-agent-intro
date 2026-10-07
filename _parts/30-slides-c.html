@@ -1,0 +1,178 @@
+
+<!-- 15 專案流程 -->
+<section class="slide" data-section="C · 專案起始" data-slide="15">
+  <div class="slide-inner">
+    <p class="kicker">PROJECT LOOP</p>
+    <h2>每個專案，只要記住<span class="hl">三句話</span></h2>
+    <div class="flow" style="margin-top:var(--s3)">
+      <div class="st hot"><span class="n">第一次</span><b>「初始化專案」</b><span>建藍圖、交接檔、作業成果，並檢查電腦</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">每次上課</span><b>「開工」</b><span>讀交接檔，告訴你上次做到哪</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">做作品</span><b>下指令生成</b><span>成果都放進「作業成果」</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">下課前</span><b>「收工」</b><span>寫好交接，換電腦也接得上</span></div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)">開工 → 做 → 收工，每次上課重複。<span class="hl2">全部做完</span>再說「寫學習歷程報告」。</p>
+  </div>
+  <div class="notes">
+    <p>示範：新開一個資料夾，在 Codex 裡說「初始化專案」，讓全班看 AI 問了哪些問題（專案名稱、班級座號、想做什麼、期限）。</p>
+    <p>只問班級與座號，不問姓名；學生資料不寫進藍圖。</p>
+    <p>開工和收工都不碰 git、不上傳任何東西。換電腦時，要把整個專案資料夾（含作業成果）一起帶過去。</p>
+  </div>
+</section>
+
+<!-- 16 初始化做什麼 -->
+<section class="slide" data-section="C · 專案起始" data-slide="16">
+  <div class="slide-inner">
+    <p class="kicker">INIT · 初始化專案</p>
+    <h2>「初始化專案」會做兩件事</h2>
+    <div class="grid2s" style="margin-top:var(--s3)">
+      <div class="card accent">
+        <h3>① 建好專案</h3>
+        <ul>
+          <li><code>AGENTS.md</code> 藍圖（含「成果放哪」的規則）</li>
+          <li><code>handoff.md</code> 交接檔</li>
+          <li><code>作業成果\</code> 圖片、影片、文件</li>
+        </ul>
+      </div>
+      <div class="card accent2">
+        <h3>② 檢查你的電腦</h3>
+        <table>
+          <tr><td><strong>ComfyUI</strong></td><td>有沒有裝、連不連得上</td></tr>
+          <tr><td><strong>生圖模型</strong></td><td>有沒有可用的模型檔</td></tr>
+          <tr><td><strong>讀 PDF／寫 Word</strong></td><td>寫學習歷程報告要用</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)">缺的東西，AI 會<span class="hl2">先問你同意</span>才補裝；<span class="hl2">不會</span>自己去下載模型。沒有 ComfyUI 也沒關係，可以先用 Codex 內建的生圖。</p>
+  </div>
+  <div class="notes">
+    <p>環境檢查是只讀的：看常見安裝位置、連線埠 8188，以及 models 資料夾下的 checkpoints／diffusion_models／unet 有沒有模型檔。</p>
+    <p>學校的 ComfyUI 若放在學校主機，連線位址由老師提供（可設為環境變數 COMFYUI_URL）。【待老師提供】</p>
+    <p>模型檔很大、來源不可信，所以 AI 不得自己下載；缺什麼就回報給老師。</p>
+    <p>Python 套件（python-docx 等）安裝前一定先問學生同意，失敗就停下請學生找老師。</p>
+  </div>
+</section>
+
+<!-- 17 作業成果規則 -->
+<section class="slide" data-section="C · 專案起始" data-slide="17">
+  <div class="slide-inner">
+    <p class="kicker">OUTPUT RULE</p>
+    <h2>生成的檔案，<span class="hl2">一律放進「作業成果」</span></h2>
+    <div class="grid2" style="margin-top:var(--s3)">
+      <div class="card"><pre class="tree"><span class="b">作業成果\</span>
+├─ <span class="y">圖片\</span>
+│   └─ 20261007_戴眼鏡的貓.png
+├─ <span class="y">影片\</span>
+│   └─ 20261007_貓翻書.mp4
+└─ <span class="y">文件\</span>
+    └─ 學習歷程報告.docx</pre></div>
+      <div>
+        <p style="margin-bottom:var(--s4)"><span class="hl2">①</span> 圖片、影片、文件<strong>各放各的資料夾</strong>。</p>
+        <p style="margin-bottom:var(--s4)"><span class="hl2">②</span> 檔名用<strong>「日期＿主題」</strong>，不覆蓋舊檔。</p>
+        <p style="margin-bottom:0"><span class="hl2">③</span> 每次生成後，<strong>叫 AI 告訴你</strong>存在哪、叫什麼名字。</p>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>這條規則已經寫進專案藍圖（AGENTS.md），AI 每次開工都會讀到；但還是要在指令裡提醒一次，成功率更高。</p>
+    <p>Codex 內建生圖有時會先存在別的位置，若沒放到作業成果，請它「複製（或移到）作業成果\圖片」。收工時 AI 也會提醒哪些檔案不在作業成果裡（只提醒，不自己搬）。</p>
+    <p>作業成果＝之後學習歷程報告的原料，沒放進來的作品，報告就寫不到。</p>
+  </div>
+</section>
+
+<!-- 18 圖片提示語 -->
+<section class="slide" data-section="D · 動手生成" data-slide="18">
+  <div class="slide-inner">
+    <p class="kicker">PROMPTS · 圖片</p>
+    <h2>範例提示語：照著改成你的題目</h2>
+    <div class="prompt"><span class="tag">範例 1 ｜ 基本款</span>
+      <p data-copy>請幫我生成一張圖片：<span class="part">一隻戴圓框眼鏡的橘貓，坐在圖書館窗邊看書</span>，<span class="part">水彩插畫風格，柔和的午後光線</span>，畫面不要有文字。存到專案的「作業成果\圖片」，檔名用「日期_戴眼鏡的貓」，存好後告訴我檔名與位置。</p>
+      <button type="button">複製</button></div>
+    <div class="prompt"><span class="tag">範例 2 ｜ 校園用途</span>
+      <p data-copy>幫我做一張社團博覽會的海報底圖：<span class="part">直式、主色藍與橘、扁平插畫風格</span>，中間留一塊空白之後放標題。不要出現真人臉孔與文字。存到「作業成果\圖片」，不要覆蓋舊檔，完成後告訴我檔名。</p>
+      <button type="button">複製</button></div>
+    <div class="prompt"><span class="tag">範例 3 ｜ 改一點再生</span>
+      <p data-copy>剛剛那張很好，但請把貓的眼鏡改成紅色，其他保持不變。另存成新檔，不要覆蓋原本那張，存到「作業成果\圖片」。</p>
+      <button type="button">複製</button></div>
+    <p class="small">黃字＝<span class="part">主體＋場景＋風格</span>。再加上「放哪、不要什麼、存好告訴我」，就是前面的四件事。</p>
+  </div>
+  <div class="notes">
+    <p>這頁只教「怎麼下指令」，不教 ComfyUI 工作流與進階提示語技巧，那部分由美術老師接手。</p>
+    <p>讓學生先照抄範例 1 生成，再改主體、場景、風格各換一個，觀察結果怎麼變。</p>
+    <p>重點不是畫得多漂亮，是練習把「放哪、不要什麼、怎麼驗收」講清楚。範例 3 示範「改一點再生」：不要整個重來，這樣省點數也比較可控。</p>
+    <p>提醒：不要用同學或老師的臉當素材；不確定能不能用的圖片，先問老師。</p>
+    <p>【待實測】Codex 內建生圖是否可用、輸出位置，請先在教室電腦試過。</p>
+  </div>
+</section>
+
+<!-- 19 影片提示語 -->
+<section class="slide" data-section="D · 動手生成" data-slide="19">
+  <div class="slide-inner">
+    <p class="kicker">PROMPTS · 影片</p>
+    <h2>影片：<span class="hl">先有一張圖</span>，再讓它動起來</h2>
+    <div class="prompt"><span class="tag">範例 4 ｜ 圖片變短影片</span>
+      <p data-copy>請用老師指定的影片生成工具，把「作業成果\圖片\20261007_戴眼鏡的貓.png」做成 3 秒短影片：<span class="part">貓輕輕翻書頁，窗外光線微微移動，鏡頭固定</span>。影片存到「作業成果\影片」，完成後告訴我檔名與長度。</p>
+      <button type="button">複製</button></div>
+    <div class="prompt"><span class="tag">範例 5 ｜ 工具不能用時</span>
+      <p data-copy>如果影片生成工具現在不能用，請告訴我原因，以及缺少什麼。不要自己去網路下載軟體或模型，也不要改我的設定。</p>
+      <button type="button">複製</button></div>
+    <div class="card accent2" style="margin-top:var(--s4)"><p style="margin:0">影片要用到哪個工具、能不能在你的電腦上跑，<strong>依學校環境而定，以老師當天說明為準</strong>。</p></div>
+  </div>
+  <div class="notes">
+    <p>【待實測】影片生成的可用工具與流程（學校 ComfyUI 是否有影片工作流、連線位址），目前沒有實測，請老師確認後再決定這一頁要不要現場示範。</p>
+    <p>這頁刻意不寫任何工作流細節，只示範「怎麼對 Agent 交辦」與「工具不能用時要它回報，而不是亂裝東西」。</p>
+    <p>先用一張圖確認畫面對，再做影片；影片比圖片更耗點數，不要一次生一堆。</p>
+  </div>
+</section>
+
+<!-- 20 學習歷程報告 -->
+<section class="slide" data-section="E · 做完之後" data-slide="20">
+  <div class="slide-inner">
+    <p class="kicker">REPORT · 學習歷程報告</p>
+    <h2>作品，變成<span class="hl">學習歷程報告</span></h2>
+    <div class="flow" style="margin-top:var(--s3)">
+      <div class="st"><span class="n">原料 1</span><b>作業成果</b><span>圖片、影片、文件</span></div><div class="ar">＋</div>
+      <div class="st"><span class="n">原料 2</span><b>對話歷程</b><span>你下過的指令與修改</span></div><div class="ar">＋</div>
+      <div class="st hot"><span class="n">原料 3</span><b>你的幾句省思</b><span>簡單說就好</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">AI</span><b>寫成草稿</b><span>問你同不同意</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">完成</span><b>Word 報告</b><span>你同意才寫入</span></div>
+    </div>
+    <div class="card accent2" style="margin-top:var(--s3)"><p style="margin:0">對 AI 說「<strong>寫學習歷程報告</strong>」。AI 只寫<strong>真的發生過的事</strong>；你沒同意的省思，<strong>不會寫進去</strong>。交出去之前，自己從頭看一遍。</p></div>
+  </div>
+  <div class="notes">
+    <p>學習歷程中的「課程學習成果」每項有百字簡述；本報告第一段即成果簡述，後面依序是學習動機、學習歷程、成果展示、學習省思。學校若有指定範本或字數，以學校為準。【待老師提供】</p>
+    <p>對話紀錄會自動遮蔽金鑰與密碼；報告最後附「AI 使用說明」，誠實揭露圖片是 AI 生成、文字經學生同意。</p>
+    <p>省思的流程：AI 問三個小問題 → 學生回答一兩句 → AI 代寫 150–300 字 → 問「同意嗎？」→ 學生同意才寫入。學生也可以選擇直接用自己的原句。</p>
+    <p>【待實測】Codex 對話紀錄的存放位置（~/.codex/sessions）。讀不到時，學生可以貼上重要指令與結果。</p>
+  </div>
+</section>
+
+<!-- 21 帶走 -->
+<section class="slide" data-section="帶走" data-slide="21">
+  <div class="slide-inner">
+    <p class="kicker">TAKE AWAY</p>
+    <h2>今天帶走這幾件事</h2>
+    <div class="grid2s" style="margin-top:var(--s3)">
+      <div class="card accent">
+        <ul>
+          <li><strong>Agent</strong> 做事，Chat AI 只講話</li>
+          <li><strong>專案資料夾</strong>＝工作間；<strong>藍圖</strong>＝記憶</li>
+          <li><strong>桌面會塞滿</strong>：一次一件事、換題目開新任務</li>
+          <li><strong>交辦四件事</strong>：做什麼、用什麼、不做什麼、驗什麼</li>
+        </ul>
+      </div>
+      <div class="card accent2">
+        <ul>
+          <li>領點數、套用、<strong>新任務</strong>、再核對</li>
+          <li><strong>Token 與密碼</strong>不貼、不借、不傳</li>
+          <li>「初始化專案」→「開工」→「收工」</li>
+          <li>作品<strong>一律放進「作業成果」</strong></li>
+        </ul>
+      </div>
+    </div>
+    <p class="credit" style="margin-top:var(--s3)">技能包：<a href="https://github.com/frentexx/ppsh-student-agent-starter">github.com/frentexx/ppsh-student-agent-starter</a>　·　內容 CC BY-NC-SA 4.0，概念部分改編自屏北高中 AI Agent 概念入門教材，其中部分改編自三師爸 Sense Bar（經同意教育使用與改作）。領取步驟依 NMKING AI Gateway 分享者操作手冊 v2.6 整理，畫面以平台當下為準。</p>
+  </div>
+  <div class="notes">
+    <p>收尾：回到一開始的問題——「它做過什麼讓你覺得只是在講」。現在你知道差別是它接上了工具和流程。</p>
+    <p>下一步：美術老師會接著教 ComfyUI 與提示語技巧，你已經會領點數、會建專案、會交辦，剛好接得上。</p>
+  </div>
+</section>
