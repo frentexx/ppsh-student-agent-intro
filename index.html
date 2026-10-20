@@ -121,6 +121,7 @@ td strong{color:var(--ink)}
 .prompt button:hover{border-color:var(--accent);color:var(--accent)}
 .prompt button.done{color:var(--ok);border-color:var(--ok)}
 .part{color:var(--accent-2);font-weight:700}
+.swap{color:var(--ink);font-weight:700;background:rgba(124,183,232,.2);border-bottom:2px dashed var(--accent);border-radius:4px;padding:0 3px}
 
 /* SVG */
 svg{display:block;width:100%;height:auto}
@@ -180,7 +181,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
     <h1 style="font-size:96px">Agent 入門</h1>
     <p class="lead" style="margin-bottom:var(--s2)">從「會聊天」到「會做事」</p>
     <p class="small">領點數 · 建專案 · 生出你的第一件 AI 作品</p>
-    <div class="links"><a class="btn" href="https://ai.nmking.io/ixeub" target="_blank" rel="noopener">① 領取點數池 →</a><a class="btn" href="https://github.com/frentexx/ppsh-student-agent-starter" target="_blank" rel="noopener">② 學生技能包（GitHub）→</a></div>
+    <div class="links"><a class="btn" href="https://ai.nmking.io/brchi" target="_blank" rel="noopener">① 領取點數池 →</a><a class="btn" href="https://github.com/frentexx/ppsh-student-agent-starter" target="_blank" rel="noopener">② 學生技能包（GitHub）→</a></div>
   </div>
   <div class="notes">
     <p>開場先問一句：「你用過 ChatGPT 之類的 AI 嗎？它做過什麼讓你覺得『它只是在講，沒有真的幫我做』？」收兩三個回答，再往下。</p>
@@ -238,7 +239,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
         <div class="st" style="text-align:left;display:flex;gap:16px;align-items:center"><span class="n" style="margin:0;font-size:22px">5</span><b style="margin:0">核對點數池、模型、有效時間，<span class="hl">下載自己的 ZIP</span></b></div>
       </div>
       <div>
-        <div style="margin-bottom:var(--s4)"><a class="btn" href="https://ai.nmking.io/ixeub" target="_blank" rel="noopener">開啟領取連結 →</a></div>
+        <div style="margin-bottom:var(--s4)"><a class="btn" href="https://ai.nmking.io/brchi" target="_blank" rel="noopener">開啟領取連結 →</a></div>
         <div class="card accent2" style="margin-bottom:var(--s4)"><h3>班級密碼</h3><p>老師<strong>口頭或寫在黑板</strong>告訴你，自己在網頁輸入。<strong>不要貼在群組。</strong></p></div>
         <div class="card danger"><h3>不要換瀏覽器</h3><p>免登入領取<strong>沒有復原碼</strong>。換電腦或清除瀏覽器資料後，不一定打得開同一份設定。</p></div>
       </div>
@@ -659,8 +660,62 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
   </div>
 </section>
 
+<!-- ===== F 做一個網站：方案 B（兩頁，步驟二用循環流程圖） ===== -->
+<section class="slide" data-section="F · 做一個網站" data-slide="18">
+  <div class="slide-inner">
+    <p class="kicker">STEP 1 · 兩句話生出初稿</p>
+    <h2>步驟一：兩句話，<span class="hl">先有一個網站</span></h2>
+    <div class="prompt"><span class="tag">全班先用同一份</span>
+      <p data-copy>請上網搜尋最近一個月<span class="swap">〔K-pop〕</span>的<span class="swap">〔演唱會、來台活動和熱門舞蹈資訊〕</span>，整理成一個單頁網站，存到專案的「作業成果\網站」。網站要有<span class="swap">〔「近期行事曆」「熱門舞蹈連結」「追星用語」〕</span>三個區塊，用繁體中文，手機也能看，每筆資料都附來源網址。</p>
+      <button type="button">複製</button></div>
+    <div class="flow" style="margin-top:var(--s3)">
+      <div class="st"><span class="n">1</span><b>送出指令</b><span>等 Agent 搜尋與製作</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">2</span><b>打開 index.html</b><span>用瀏覽器看初稿</span></div><div class="ar">→</div>
+      <div class="st hot"><span class="n">3</span><b>點兩筆來源</b><span>確認日期與內容是真的</span></div>
+    </div>
+    <p class="small" style="margin-top:var(--s3)"><span class="swap">〔藍底虛線〕</span>＝可以換成你自己的：<strong>主題</strong>（偶像、運動、遊戲…）、<strong>想看的資訊</strong>、<strong>網站區塊</strong>。換完再送出。</p>
+  </div>
+  <div class="notes">
+    <p>全班同一份指令，10 分鐘內人人有初稿，先求有成就感。只給目標與成果，不講語法。</p>
+    <p>資料是 AI 搜尋來的，可能過期或搜錯，所以要求附來源並親自核對，是媒體識讀練習。</p>
+    <p>Threads 需要登入，Agent 通常抓不到，用一般網頁搜尋即可。</p>
+    <p>【待實測】教室環境的搜尋能力與網頁預覽方式，上課前先跑一次。</p>
+  </div>
+</section>
+
+<section class="slide" data-section="F · 做一個網站" data-slide="19">
+  <div class="slide-inner">
+    <p class="kicker">STEP 2 · 引導探索需求</p>
+    <h2>步驟二：<span class="hl">一次改一件</span>，改完再看</h2>
+    <div class="flow" style="margin-top:var(--s2)">
+      <div class="st"><span class="n">問 1</span><b>換哪一個？</b><span>內容、外觀、功能三選一</span></div><div class="ar">→</div>
+      <div class="st"><span class="n">問 2</span><b>要什麼感覺？</b><span>一句話，不講技術</span></div><div class="ar">→</div>
+      <div class="st hot"><span class="n">改</span><b>貼句型給 Agent</b><span>先說做法，我同意再動手</span></div><div class="ar">→</div>
+      <div class="st cool"><span class="n">問 3</span><b>重新整理看結果</b><span>不滿意就「恢復上一版」</span></div>
+    </div>
+    <div class="grid3" style="margin-top:var(--s3)">
+      <div class="prompt"><span class="tag">外觀</span>
+        <p data-copy style="font-size:18px">請把網站改成<span class="swap">〔舞台、暗底螢光粉〕</span>的感覺，先給我兩種配色，我選了你再改。</p>
+        <button type="button">複製</button></div>
+      <div class="prompt"><span class="tag">功能</span>
+        <p data-copy style="font-size:18px">我想加<span class="swap">〔演唱會倒數計時〕</span>，請先用白話說明做法，我同意再動手。</p>
+        <button type="button">複製</button></div>
+      <div class="prompt"><span class="tag">質感</span>
+        <p data-copy style="font-size:18px">請找出這個網站最不專業的三個地方，列給我看，我選要不要改。</p>
+        <button type="button">複製</button></div>
+    </div>
+    <p class="small"><span class="swap">〔藍底虛線〕</span>＝換成你的想法。交件：至少改一次外觀、加一個功能，並說得出「為什麼這樣改」。</p>
+  </div>
+  <div class="notes">
+    <p>不要問「你想改什麼」，學生沒經驗答不出來；改成三選一，再用感覺描述。卡住時問：「你想讓看網站的人有什麼感覺？」</p>
+    <p>「恢復上一版」是安全網，學生知道能退回就敢嘗試。第三句讓 Agent 當審查員，不需設計經驗也能提升質感。</p>
+    <p>改內容：「把主角換成〔團名〕，資料重新搜尋，一樣附來源網址。」</p>
+    <p>可替換處：步驟一的〔主題〕〔資訊類型〕〔網站區塊〕，步驟二的〔氛圍〕〔功能〕。藍底虛線＝替換處，複製後括號可保留或刪掉。主題不限 K-pop，示範用。</p>
+  </div>
+</section>
+
 <!-- 20 學習歷程報告 -->
-<section class="slide" data-section="E · 做完之後" data-slide="18">
+<section class="slide" data-section="E · 做完之後" data-slide="20">
   <div class="slide-inner">
     <p class="kicker">REPORT · 學習歷程報告</p>
     <h2>作品，變成<span class="hl">學習歷程報告</span></h2>
@@ -682,7 +737,7 @@ body.show-notes .slide.active .notes::before{content:"講者備忘";display:bloc
 </section>
 
 <!-- 21 帶走 -->
-<section class="slide" data-section="帶走" data-slide="19">
+<section class="slide" data-section="帶走" data-slide="21">
   <div class="slide-inner">
     <p class="kicker">TAKE AWAY</p>
     <h2>今天帶走這幾件事</h2>
